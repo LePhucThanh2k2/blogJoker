@@ -1,0 +1,39 @@
+$lightGreen: #b9e7e7;
+$textColor: teal;
+//  Default Colors
+$text-dark: #fff;
+$text-light: #718096;
+$bgc-dark-primary: #2d3748;
+$bgc-dark-secondary: #1a202c;
+$bgc-light-primary: #fff;
+$bgc-light-secondary: #f2f0f0;
+$bgc-search-primary: #e2e8f0;
+$bgc-search-secondary: #718096;
+
+ul > li {
+  list-style: none;
+}
+ul {
+  ul {
+    list-style: none;
+  }
+}
+.app {
+  & > .container {
+    min-height: 100vh;
+    background-color: $bgc-dark-secondary;
+    &.light {
+      background-color: $bgc-light-secondary;
+    }
+  }
+}
+div {
+  display: block;
+}
+.home {
+  min-height: 100vh;
+}
+.waitingFetchData {
+  text-align: center;
+  color: red;
+}
