@@ -1,25 +1,27 @@
 import { api } from "../../api";
-export function getCategories(data) {
-  return {
-    type: "GET_CATEGORIES",
-    payload: { data },
-  };
+import { mappingDataArticles } from "../../helper";
+
+export const ACT_GET_LIST_SUGGESTED_ARTICLE = "ACT_GET_LIST_SUGGESTED_ARTICLE ";
+
+export function actGetListSuggestedArticle(data) {
+  return { type: ACT_GET_LIST_SUGGESTED_ARTICLE, payload: { data } };
 }
-export function getCategoriesAsync(id) {
+
+export function actGetListSuggestedArticleAsync() {
   return async (dispatch) => {
     try {
-      const obj = {};
-      const res = await api.get("/wp/v2/categories?per_page=50&page=1", {
+      const res = await api.get("/wp/v2/posts?lang=vi", {
         params: {
-          include: id,
+          per_page: 7,
+          page: 1,
         },
       });
-      res.data.map((item) => {
-        obj[item.id] = item.name;
-      });
-      dispatch(getCategories(obj));
+      const data = res.data.map(mappingDataArticles);
+      dispatch(actGetListSuggestedArticle(data));
+      return { ok: true };
     } catch (error) {
       console.log(error);
+      return { ok: false };
     }
   };
 }

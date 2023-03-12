@@ -1,15 +1,22 @@
-const initSate = {
-  categories: {},
+import { ACT_GET_LIST_SUGGESTED_ARTICLE } from "./action";
+
+const initState = {
+  // haveData : set action waiting for fetch data
+  haveData: false,
+  suggestedArticle: [],
 };
-function categoriesReducer(state = initSate, action) {
+
+function suggestedArticleReducer(state = initState, action) {
   switch (action.type) {
-    case "GET_CATEGORIES":
+    case ACT_GET_LIST_SUGGESTED_ARTICLE:
       return {
         ...state,
-        categories: { ...action.payload.data },
+        suggestedArticle: [...action.payload.data],
+        haveData: true,
       };
+
     default:
       return state;
   }
 }
-export default categoriesReducer;
+export default suggestedArticleReducer;

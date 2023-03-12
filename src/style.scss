@@ -9,7 +9,11 @@ $bgc-light-primary: #fff;
 $bgc-light-secondary: #f2f0f0;
 $bgc-search-primary: #e2e8f0;
 $bgc-search-secondary: #718096;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 ul > li {
   list-style: none;
 }
@@ -35,5 +39,5 @@ div {
 }
 .waitingFetchData {
   text-align: center;
-  color: red;
+  color: rgb(0, 242, 255);
 }

@@ -1,13 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .register {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: #000;
 }
 .box {
   position: relative;
@@ -40,7 +37,7 @@
     background: linear-gradient(0deg, #45f3ff, #45f3ff);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
-    animation-delay: 3s;
+    animation-delay: -3s;
   }
   .form {
     position: absolute;

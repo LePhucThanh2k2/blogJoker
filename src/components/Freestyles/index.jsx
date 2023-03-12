@@ -6,7 +6,7 @@ const FreeStyles = () => {
       <div className="avatar">
         <a href="https://www.facebook.com/ilovetechnologys">
           <img
-            src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/298837490_744795830152310_3028282514526728890_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UzD-TiEGRCoAX80qQHp&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfCnR07_mvn5MOtf_KcRW91dLU3ZKMmcHXExWy4-1OU7WQ&oe=63FD0E3E"
+            src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/298837490_744795830152310_3028282514526728890_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=uxt6-4oJk3AAX_D-2iw&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfDZNBh0jfGzKBjrszw1fr0DTB13WXHaxnXO40mp2LeFcg&oe=640EDA7E"
             alt="Skytsunami"
           />
         </a>
