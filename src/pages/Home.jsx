@@ -11,28 +11,36 @@ import iconLoading from "../share/iconLoading";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const categories = useSelector((state) => state.categoriesReducer.categories);
+  const configCategories = ["FE"];
   // haveData: set icon loading or not
-  const haveData = useSelector(
-    (state) => state.suggestedArticleReducer.haveData
-  );
+
+  const eleArticlesByCategory = configCategories.map((item) => {
+    const id = parseInt(categories[item]?.id);
+    return (
+      <ArticlesByCategory idCategory={id || 0} nameCategory={item} key={id} />
+    );
+  });
   useEffect(() => {
     dispatch(getCategoriesAsync());
     dispatch(actGetListSuggestedArticleAsync());
-    dispatch(actFetchInfoUserAsync());
+    // dispatch(actFetchInfoUserAsync());
   }, []);
+  const haveData = useSelector((state) => state.listArticle.haveData);
+
   return (
     <div className={`home`}>
       <div className='container'>
         {haveData ? (
           <>
             <SuggestedArticles title={"Bài viết đề xuất"} />
-            <ArticlesByCategory idCategory={9} />
-            <ArticlesByCategory idCategory={105} />
-            <ArticlesByCategory idCategory={10} />
+            {eleArticlesByCategory}
           </>
         ) : (
           <div className='waitingFetchData'>{iconLoading}</div>
         )}
+
+        <FreeStyles />
       </div>
     </div>
   );

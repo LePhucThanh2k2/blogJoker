@@ -98,14 +98,14 @@
   color: #015985;
   background-color: rgb(132, 236, 247);
   width: 150px;
-  text-align: center;
   height: 50px;
-  line-height: 50px;
-  padding: 0 10px;
   border-radius: 20px 0 20px 0;
   margin: 20px auto 0;
   font-weight: bold;
   transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     animation-name: loadMore;
     animation-duration: 0.5s;
@@ -128,4 +128,7 @@
       transform: rotate(0deg);
     }
   }
+}
+.button svg{
+  width: 25px;
 }

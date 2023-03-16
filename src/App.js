@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar/index";
@@ -11,6 +11,7 @@ import Write from "./pages/Write";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./style.scss";
+import Test from "./pages/test";
 AOS.init();
 const Layout = () => {
   return (
@@ -49,6 +50,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+ 
 ]);
 
 function App() {

@@ -38,7 +38,6 @@ const Navbar = () => {
     <div className={`header  ${contextTheme.theme}`}>
       <div className='header__container'>
         <div className='header__logo'>
-          <p>avatar</p>
           <img src={Logo} alt='logo-joker' />
         </div>
         <div

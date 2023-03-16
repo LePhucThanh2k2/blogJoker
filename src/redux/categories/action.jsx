@@ -5,17 +5,13 @@ export function getCategories(data) {
     payload: { data },
   };
 }
-export function getCategoriesAsync(id) {
+export function getCategoriesAsync() {
   return async (dispatch) => {
     try {
       const obj = {};
-      const res = await api.get("/wp/v2/categories?per_page=50&page=1", {
-        params: {
-          include: id,
-        },
-      });
+      const res = await api.get("/wp/v2/categories?per_page=50&page=1");
       res.data.map((item) => {
-        obj[item.id] = item.name;
+        obj[item.name.toUpperCase()] = { id: item.id, name: item.name };
       });
       dispatch(getCategories(obj));
     } catch (error) {

@@ -8,9 +8,7 @@ import Articles from "../Articles";
 import "./style.scss";
 const SuggestedArticles = ({ title }) => {
   const contentTheme = useContext(ThemeContext);
-  const data = useSelector(
-    (state) => state.suggestedArticleReducer.suggestedArticle
-  );
+  const data = useSelector((state) => state.listArticle.suggestedArticle);
   if (data.length > 0) {
     return (
       <div className='suggestedArticles'>

@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
 import categoriesReducer from "./categories/reducer";
-import suggestedArticleReducer from "./posts/reducer";
+import listArticle from "./posts/reducer";
 const rootReducer = combineReducers({
   categoriesReducer,
-  suggestedArticleReducer,
+  listArticle,
 });
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export default store;
